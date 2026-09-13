@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173f35">
+  <title>لغت — Словарь</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"> 
+      <div class="brand-mark">د</div>
+      <div>
+        <div class="brand-ar">لغت</div>
+        <div class="brand-sub">Крымско-татарско-русский словарь</div>
+      </div>
+    </div>
+    <button id="themeBtn" class="icon-btn" title="Переключить тему" aria-label="Переключить тему">☾</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-pattern"></div>
+      <div class="hero-content">
+        <div class="eyebrow">КРЫМСКО-ТАТАРСКО-РУССКИЙ СЛОВАРЬ</div>
+        <h1>Найди слово.<br><span>Пойми значение.</span></h1>
+        <p>Быстрый поиск по словам, переводам и определениям из вашей Excel-базы.</p>
+
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="Введите арабское слово или перевод..." autocomplete="off">
+          <button id="clearBtn" class="clear-btn" hidden>×</button>
+          <kbd>Ctrl K</kbd>
+        </div>
+        <div class="quick">
+          <button data-query="كتاب">كتاب</button>
+          <button data-query="بيلگي">بيلگي</button>
+          <button data-query="مدرسة">مدرسة</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="sidebar">
+        <div class="side-title">Навигация</div>
+        <button class="nav-item active" data-view="all">⌂ <span>Все слова</span><b id="countAll">0</b></button>
+        <button class="nav-item" data-view="favorites">♡ <span>Избранное</span><b id="countFav">0</b></button>
+
+        <div class="side-title category-title">Категории</div>
+        <div id="categories"></div>
+
+        <div class="tip">
+          <strong>Совет</strong>
+          <p>Добавляйте слова в избранное, чтобы быстро возвращаться к ним.</p>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div class="content-head">
+          <div>
+            <div id="viewTitle" class="content-title">Все слова</div>
+            <div id="status" class="muted">Загрузка словаря…</div>
+          </div>
+          <select id="sortSelect" aria-label="Сортировка">
+            <option value="default">По умолчанию</option>
+            <option value="az">А → Я</option>
+            <option value="za">Я → А</option>
+          </select>
+        </div>
+
+        <div id="results" class="grid"></div>
+
+        <div id="empty" class="empty" hidden>
+          <div class="empty-icon">⌕</div>
+          <h2>Ничего не найдено</h2>
+          <p>Попробуйте изменить запрос или выбрать другую категорию.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <span>لغت</span>
+    <span>Ваш словарь — ваши знания</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
