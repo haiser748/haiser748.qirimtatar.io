@@ -6,7 +6,7 @@ try{favorites=new Set(JSON.parse(localStorage.getItem("dictionaryFavorites")||"[
 
 async function loadDictionary(){
   try{
-      const response = await fetch("dictionary.xlsx");
+      const response = await fetch("dictionary.xlsx?v=" + Date.now(), { cache: "no-store" });
     if(!response.ok)throw new Error("Excel не найден");
     const buffer=await response.arrayBuffer();
     const wb=XLSX.read(buffer,{type:"array"});
