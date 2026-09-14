@@ -11,16 +11,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"> 
-      <div class="brand-mark">د</div>
-      <div>
-        <div class="brand-ar">لغت</div>
-        <div class="brand-sub">Крымскотатарско-русский словарь</div>
-      </div>
-    </div>
-    <button id="themeBtn" class="icon-btn" title="Переключить тему" aria-label="Переключить тему">☾</button>
-  </header>
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-mark">د</div>
+            <div>
+                <div class="brand-ar">لغت</div>
+                <div class="brand-sub">Крымскотатарско-русский словарь</div>
+            </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+            <a href="alphabet.html" class="icon-btn" style="display:grid;place-items:center;text-decoration:none;font-size:13px;padding:0 12px;width:auto" title="Изучать буквы">حرفلر harifler</a>
+            <button id="themeBtn" class="icon-btn" title="Переключить тему" aria-label="Переключить тему">☾</button>
+    </header>
 
   <main>
     <section class="hero">
@@ -33,8 +35,6 @@
         <div class="search-wrap">
           <span class="search-icon">⌕</span>
           <input id="searchInput" type="search" placeholder="Введите крымскотатарское слово или перевод..." autocomplete="off">
-          <button id="clearBtn" class="clear-btn" hidden>×</button>
-          <kbd>Ctrl K</kbd>
         </div>
         <div class="quick">
             <button data-query="کتاب">کتاب</button>

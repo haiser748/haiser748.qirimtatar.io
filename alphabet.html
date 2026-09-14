@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173f35">
+  <title>حروف — Арабские буквы крымскотатарского</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .alphabet-hero{background:var(--primary);color:#fff;position:relative;overflow:hidden}.alphabet-content{max-width:1240px;margin:auto;padding:62px 22px 52px}.alphabet-content h1{margin-bottom:12px}.alphabet-content p{max-width:700px;color:#c5d5cf;line-height:1.65;margin:0}.back-link{display:inline-flex;margin-bottom:22px;color:#dbe9e3;text-decoration:none;font-size:13px}.back-link:hover{text-decoration:underline}
+    .alphabet-workspace{max-width:1240px;margin:0 auto;padding:34px 22px 60px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:20px}.section-head h2{margin:0;font-size:24px}.section-head p{margin:5px 0 0;color:var(--muted);font-size:12px}
+    .letters-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.letter-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}.letter-main{display:flex;align-items:center;justify-content:space-between;gap:15px}.letter{font:700 54px Amiri,serif;line-height:1;direction:rtl}.letter-info{flex:1}.letter-name{font-weight:800;font-size:15px}.letter-sound{font-size:12px;color:var(--muted);margin-top:4px}.forms{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:15px}.form{background:var(--surface2);border-radius:9px;text-align:center;padding:7px 3px}.form span{display:block;font:28px Amiri,serif;direction:rtl;line-height:1.2}.form small{display:block;color:var(--muted);font-size:8px;margin-top:3px}.special{border-color:rgba(201,155,75,.45)}.note{margin:24px 0 0;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:14px;color:var(--muted);font-size:12px;line-height:1.65}.note strong{color:var(--text)}
+    @media(max-width:900px){.letters-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:650px){.letters-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.alphabet-content{padding:45px 18px}.alphabet-workspace{padding:28px 18px 45px}.section-head{display:block}.letter{font-size:48px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">د</div><div><div class="brand-ar">لغت</div><div class="brand-sub">Крымско-татарско-русский словарь</div></div></div>
+    <nav style="display:flex;align-items:center;gap:8px"><a href="index.html" class="icon-btn" style="display:grid;place-items:center;text-decoration:none;font-size:14px" title="Словарь">⌂</a><button id="themeBtn" class="icon-btn" title="Переключить тему" aria-label="Переключить тему">☾</button></nav>
+  </header>
+
+  <main>
+    <section class="alphabet-hero"><div class="hero-pattern"></div><div class="alphabet-content" style="position:relative">
+      <a class="back-link" href="index.html">← Вернуться к словарю</a>
+      <div class="eyebrow">ИЗУЧЕНИЕ КРЫМСКОТАТАРСКОЙ АРАБИЦЫ</div>
+      <h1>Буквы.<br><span>Звук. Написание.</span></h1>
+      <p>Изучайте буквы крымскотатарской арабицы, их названия и формы написания. В алфавите используются дополнительные буквы پ، چ، ژ، گ، ڭ, а звук «кяф» записывается буквой ک.</p>
+    </div></section>
+
+    <section class="alphabet-workspace">
+      <div class="section-head"><div><h2>Алфавит</h2><p>Нажмите на карточку, чтобы рассмотреть букву и её формы.</p></div></div>
+      <div id="letters" class="letters-grid"></div>
+      <div class="note"><strong>Важно:</strong> формы в карточках показывают изолированное, начальное, срединное и конечное написание. Для букв, которые не соединяются со следующей буквой, начальная и срединная формы могут совпадать с изолированной/конечной.</div>
+    </section>
+  </main>
+  <footer><span>لغت</span><span>Ваш словарь — ваши знания</span></footer>
+  <script>
+    const letters = [
+      ['ا','алиф','a / ä',['ا','ا','ـا','ـا']],
+      ['ب','бе','b',['ب','بـ','ـبـ','ـب']],
+      ['پ','пе','p',['پ','پـ','ـپـ','ـپ']],
+      ['ت','те','t',['ت','تـ','ـتـ','ـت']],
+      ['ث','се','s / th',['ث','ثـ','ـثـ','ـث']],
+      ['ج','джим','c / j',['ج','جـ','ـجـ','ـج']],
+      ['چ','че','ç',['چ','چـ','ـچـ','ـچ']],
+      ['ح','ха','h',['ح','حـ','ـحـ','ـح']],
+      ['خ','хы','h / kh',['خ','خـ','ـخـ','ـخ']],
+      ['د','даль','d',['د','د','ـد','ـد']],
+      ['ذ','заль','z / dh',['ذ','ذ','ـذ','ـذ']],
+      ['ر','ра','r',['ر','ر','ـر','ـر']],
+      ['ز','зай','z',['ز','ز','ـز','ـز']],
+      ['ژ','же','j / ž',['ژ','ژ','ـژ','ـژ']],
+      ['س','син','s',['س','سـ','ـسـ','ـس']],
+      ['ش','шин','ş',['ش','شـ','ـشـ','ـش']],
+      ['ص','сад','s',['ص','صـ','ـصـ','ـص']],
+      ['ض','дад','z / d',['ض','ضـ','ـضـ','ـض']],
+      ['ط','та','t',['ط','طـ','ـطـ','ـط']],
+      ['ظ','за','z',['ظ','ظـ','ـظـ','ـظ']],
+      ['ع','айн','ğ / ʿ',['ع','عـ','ـعـ','ـع']],
+      ['غ','гайн','ğ / gh',['غ','غـ','ـغـ','ـغ']],
+      ['ف','фе','f',['ف','فـ','ـفـ','ـف']],
+      ['ق','каф','q',['ق','قـ','ـقـ','ـق']],
+      ['ک','кяф','k',['ک','کـ','ـکـ','ـک']],
+      ['گ','ге','g',['گ','گـ','ـگـ','ـگ']],
+      ['ڭ','ңе','ñ / ng',['ڭ','ڭـ','ـڭـ','ـڭ']],
+      ['ل','лям','l',['ل','لـ','ـلـ','ـل']],
+      ['م','мим','m',['م','مـ','ـمـ','ـم']],
+      ['ن','нун','n',['ن','نـ','ـنـ','ـن']],
+      ['و','вав','v / w',['و','و','ـو','ـو']],
+      ['ه','хе','h',['ه','هـ','ـهـ','ـه']],
+      ['ي','йе','y / i',['ي','يـ','ـيـ','ـي']]
+    ];
+    const names=['Изолированная','Начальная','Срединная','Конечная'];
+    document.getElementById('letters').innerHTML=letters.map(([char,name,sound,forms])=>`<article class="letter-card ${['پ','چ','ژ','گ','ڭ','ک'].includes(char)?'special':''}"><div class="letter-main"><div class="letter">${char}</div><div class="letter-info"><div class="letter-name">${name}</div><div class="letter-sound">${sound}</div></div></div><div class="forms">${forms.map((f,i)=>`<div class="form"><span>${f}</span><small>${names[i]}</small></div>`).join('')}</div></article>`).join('');
+    const savedTheme=localStorage.getItem('dictionaryTheme');if(savedTheme)document.documentElement.dataset.theme=savedTheme;const themeBtn=document.getElementById('themeBtn');themeBtn.textContent=document.documentElement.dataset.theme==='dark'?'☀':'☾';themeBtn.onclick=()=>{const dark=document.documentElement.dataset.theme==='dark';document.documentElement.dataset.theme=dark?'':'dark';localStorage.setItem('dictionaryTheme',dark?'':'dark');themeBtn.textContent=dark?'☾':'☀'};
+  </script>
+</body>
+</html>
