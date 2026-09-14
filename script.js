@@ -28,7 +28,9 @@ function updateCounts(){$("countAll").textContent=dictionary.length;$("countFav"
 function activateCategory(btn){document.querySelectorAll(".nav-item").forEach(x=>x.classList.remove("active"));btn.classList.add("active")}
 document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{currentView=b.dataset.view;currentCategory="";document.querySelectorAll(".nav-item").forEach(x=>x.classList.remove("active"));b.classList.add("active");render()});
 $("sortSelect").onchange=render;
-document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{input.value=b.dataset.query;render();window.scrollTo({top:0,behavior:"smooth"})});
+input.oninput=()=>{ $("clearBtn").hidden=!input.value; render() };
+$("clearBtn").onclick=()=>{input.value="";$("clearBtn").hidden=true;render();input.focus()};
+document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{input.value=b.dataset.query;$("clearBtn").hidden=false;render();window.scrollTo({top:0,behavior:"smooth"})});
 document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();input.focus()}});
 function render(){
   let arr=[...dictionary], q=norm(input.value);
